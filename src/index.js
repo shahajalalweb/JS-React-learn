@@ -1,11 +1,16 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-setInterval(() => {
-  const element = (
-    <h1 className='heading'>
-      <span className='text'>Time: {new Date().toLocaleTimeString()}</span>
-    </h1>
-  );
-  ReactDOM.render(element, document.getElementById('root'));
-}, 1000);
+const roots = document.querySelector('#root');
+
+const Increment = () => {
+    const [counters, setCounter] = React.useState(0);
+    return (
+      <div class="counter">
+        <h1 id="display">{ counters }</h1>
+        <button id="button" onClick={() => setCounter(counters + 1)}>Click ME</button>
+      </div>
+    );
+}
+
+ReactDOM.render(<Increment />, roots);
