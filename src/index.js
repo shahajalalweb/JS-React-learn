@@ -1,11 +1,26 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import App from './App';
+
+function UserGreeting(props) {
+  return <h1>Welcome Back</h1>;
+}
+function GuestGreeting(props){
+  return <h1>Please sign Up.</h1>;
+}
+
+function Greeting(props){
+  const isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn) {
+    return <UserGreeting />;
+  }return <GuestGreeting />;
+}
+
+
+
+
 
 ReactDOM.render (
-  <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+  <Greeting  isLoggedIn={false} />,
   document.getElementById('root')
 );
 
