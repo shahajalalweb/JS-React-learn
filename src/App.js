@@ -1,7 +1,12 @@
-import Text from "./component/inheritance/Text";
+import Emoji from "./component/composition/Emoji";
+import Text from "./component/composition/Text";
 
 function App() {
-  return <Text />;
+  return (
+    <Emoji>
+      {({addEmoji}) => <Text addEmoji={addEmoji} />}
+    </Emoji>
+  );
 }
 
 export default App;
