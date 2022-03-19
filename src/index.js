@@ -1,21 +1,23 @@
-import React from 'react';
+import React, { useState } from 'react';
 import ReactDOM from 'react-dom';
 
-function Welcome(props) {
-  return <h1>Mithi, {props.name}</h1>;
-}
+function Example() {
+  // Declare a new state variable, which we'll call "count"
+  const [count, setCount] = useState(0);
 
-function App() {
   return (
     <div>
-      <Welcome name="i love you" />
-      <Welcome name="Do you Love me " />
-      <Welcome name="take Love LojjaBoti" />
+      <p>You clicked {count} times</p>
+      <button onClick={() => setCount(count + 1)}>
+        Click me
+      </button>
     </div>
   );
 }
-
-ReactDOM.render(
-  <App />,
+ReactDOM.render (
+  <Example />,
   document.getElementById('root')
 );
+
+
+
