@@ -1,8 +1,9 @@
-import Form from "./hooks/From";
+import LayoutComponentOne from "./component/LayoutComponent";
 
-
-function App() {
-  <Form />
+export default function App() {
+    return (
+        <div>
+            <LayoutComponentOne />
+        </div>
+    );
 }
-
-export default App;
